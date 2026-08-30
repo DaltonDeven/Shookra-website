@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shookra Aesthetics &amp; Academy — Shivalik Road, New Delhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+
+  :root{
+    --ivory:#FBF8F2;
+    --cream:#F3EBDB;
+    --cream-deep:#EADFC6;
+    --charcoal:#18130E;
+    --ink:#2A2119;
+    --ink-soft:#6E5F4E;
+    --gold:#A9832A;
+    --gold-light:#D9BB6E;
+    --gold-pale:#EBDCB0;
+    --gold-deep:#7E5E1E;
+    --hairline: rgba(42,33,25,.16);
+    --hairline-strong: rgba(42,33,25,.3);
+    --max: 1180px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  ::selection{ background:var(--gold); color:var(--ivory); }
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 32px; }
+
+  .eyebrow{
+    font-family:'Cinzel', serif;
+    font-weight:500;
+    font-size:11.5px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+  }
+  .eyebrow--on-dark{ color:var(--gold-light); }
+
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:500;
+    line-height:1.05;
+    margin:0;
+    letter-spacing:.005em;
+  }
+  h1 em, h2 em{ font-style:italic; color:var(--gold-deep); }
+
+  /* ---------- sparkle divider (signature motif) ---------- */
+  .spark{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:14px; height:14px; flex-shrink:0;
+  }
+  .spark svg{ width:100%; height:100%; }
+  .divider{
+    display:flex; align-items:center; gap:14px;
+  }
+  .divider .rule{
+    flex:1; height:1px;
+    background:linear-gradient(90deg, transparent, var(--hairline-strong), transparent);
+  }
+  .divider .rule.left{ background:linear-gradient(90deg, transparent, var(--hairline-strong)); }
+  .divider .rule.right{ background:linear-gradient(270deg, transparent, var(--hairline-strong)); }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Cinzel', serif;
+    font-weight:500;
+    font-size:12px; letter-spacing:.12em; text-transform:uppercase;
+    padding:16px 26px;
+    border:1px solid var(--gold-deep);
+    background:transparent;
+    color:var(--ink);
+    cursor:pointer;
+    transition:background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ background:var(--ink); border-color:var(--ink); color:var(--ivory); }
+  .btn--solid{ background:var(--gold); border-color:var(--gold); color:var(--ivory); }
+  .btn--solid:hover{ background:var(--gold-deep); border-color:var(--gold-deep); }
+  .btn--ghost-dark{ border-color:rgba(217,187,110,.5); color:var(--gold-light); }
+  .btn--ghost-dark:hover{ background:var(--gold-light); border-color:var(--gold-light); color:var(--charcoal); }
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(251,248,242,.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hairline);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{
+    width:44px; height:44px; border-radius:50%;
+    overflow:hidden;
+    flex-shrink:0;
+    box-shadow:0 0 0 1px var(--hairline-strong);
+  }
+  .brand-mark img{ width:100%; height:100%; object-fit:cover; transform:scale(1.5); display:block; mix-blend-mode:multiply; }
+  .wordmark{
+    font-family:'Cinzel', serif;
+    font-size:16px;
+    letter-spacing:.14em;
+    line-height:1.2;
+  }
+  .wordmark small{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    margin-top:3px;
+  }
+  .navlinks{ display:flex; align-items:center; gap:34px; }
+  .navlinks-inner{ display:flex; gap:30px; }
+  .navlinks a{
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-soft);
+    transition:color .2s ease;
+  }
+  .navlinks a:hover{ color:var(--gold-deep); }
+
+  @media (max-width:760px){ .navlinks-inner{ display:none; } }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:88px 0 70px;
+    overflow:hidden;
+    text-align:center;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 18%, var(--gold-pale) 0%, transparent 65%),
+      var(--ivory);
+  }
+  .hero .wrap{ position:relative; }
+
+  .hero-mark{
+    width:100%;
+    max-width:220px;
+    margin:0 auto 4px;
+    mix-blend-mode:multiply;
+  }
+  .hero-mark img{ width:100%; height:auto; display:block; }
+
+  .hero-eyebrow{ margin-bottom:22px; }
+
+  .hero-headline{
+    font-size:clamp(38px, 6vw, 68px);
+    max-width:16ch;
+    margin:0 auto;
+  }
+  .hero-sub{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:44ch;
+    margin:26px auto 0;
+  }
+  .hero-cta{ display:flex; gap:16px; justify-content:center; margin-top:38px; flex-wrap:wrap; }
+
+  /* ---------- section shell ---------- */
+  section{ padding:104px 0; position:relative; }
+  .section-head{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 64px;
+  }
+  .section-head .eyebrow{ display:block; margin-bottom:14px; }
+  .section-head h2{ font-size:clamp(30px,3.8vw,46px); margin-bottom:16px; }
+  .section-note{ font-size:15px; color:var(--ink-soft); }
+
+  /* ---------- services ---------- */
+  .service-list{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--hairline);
+    border:1px solid var(--hairline);
+  }
+  .service{
+    background:var(--ivory);
+    padding:44px 34px;
+    position:relative;
+    opacity:0; transform:translateY(18px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .service.in{ opacity:1; transform:none; }
+  .service .spark{ color:var(--gold); margin-bottom:22px; }
+  .service h3{ font-size:25px; font-weight:500; margin-bottom:12px; }
+  .service p{ font-size:14px; color:var(--ink-soft); max-width:32ch; }
+  .service-line{
+    position:absolute; left:0; bottom:0; height:2px; width:0;
+    background:var(--gold);
+    transition:width .35s ease;
+  }
+  .service:hover .service-line{ width:100%; }
+
+  @media (max-width:900px){ .service-list{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:640px){ .service-list{ grid-template-columns:1fr; } }
+
+  /* ---------- academy (inverted, echoes the logo's dark vignette) ---------- */
+  .academy{
+    background:var(--charcoal);
+    color:var(--ivory);
+  }
+  .academy .section-head p{ color:rgba(251,248,242,.68); }
+  .academy-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:64px;
+    align-items:start;
+  }
+  .academy-copy p{
+    font-size:17px;
+    color:rgba(251,248,242,.82);
+    max-width:46ch;
+    margin:0 0 30px;
+  }
+  .academy-list{ list-style:none; margin:0 0 34px; padding:0; }
+  .academy-list li{
+    display:flex; gap:16px; align-items:baseline;
+    padding:16px 0;
+    border-top:1px solid rgba(217,187,110,.18);
+  }
+  .academy-list li .spark{ color:var(--gold-light); flex-shrink:0; transform:translateY(2px); }
+  .academy-list li div span{
+    display:block;
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--gold-light);
+    margin-bottom:4px;
+  }
+  .academy-list li div p{ margin:0; font-size:14.5px; color:rgba(251,248,242,.72); }
+  .academy-panel{
+    border:1px solid rgba(217,187,110,.28);
+    padding:36px;
+  }
+  .academy-panel .eyebrow{ display:block; margin-bottom:20px; }
+  .academy-panel .stat{
+    font-family:'Cormorant Garamond', serif;
+    font-size:46px;
+    color:var(--gold-light);
+    margin-bottom:6px;
+  }
+  .academy-panel .stat-label{
+    font-size:13.5px;
+    color:rgba(251,248,242,.68);
+    margin-bottom:28px;
+  }
+  .academy-panel .stat-label:last-child{ margin-bottom:0; }
+
+  @media (max-width:900px){ .academy-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- trust strip ---------- */
+  .trust{
+    padding:52px 0;
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+  }
+  .trust .wrap{ display:flex; flex-wrap:wrap; gap:18px 44px; justify-content:center; }
+  .trust-item{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .trust-item .spark{ width:11px; height:11px; color:var(--gold); }
+
+  /* ---------- visit ---------- */
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+  }
+  .visit-card{
+    border:1px solid var(--hairline-strong);
+    padding:44px;
+    background:var(--cream);
+  }
+  .visit-card .eyebrow{ display:block; margin-bottom:20px; }
+  .visit-address{
+    font-family:'Cormorant Garamond', serif;
+    font-size:30px;
+    margin-bottom:24px;
+  }
+  .visit-meta{ font-size:14px; color:var(--ink-soft); margin-bottom:30px; }
+  .visit-meta div{
+    padding:12px 0; border-top:1px solid var(--hairline);
+    display:flex; justify-content:space-between; gap:12px;
+  }
+  .visit-meta div span:first-child{
+    font-family:'Cinzel', serif; font-size:10.5px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--gold-deep);
+  }
+  .map-frame{
+    border:1px solid var(--hairline-strong);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+    background:
+      radial-gradient(circle at 50% 50%, var(--gold-pale) 0%, transparent 60%),
+      var(--cream);
+    position:relative;
+  }
+  .map-pin{
+    width:52px; height:52px;
+    border:1px solid var(--gold-deep);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .map-pin .spark{ width:18px; height:18px; color:var(--gold); }
+  .map-frame p{
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft);
+    text-align:center; max-width:22ch;
+  }
+
+  @media (max-width:900px){ .visit-grid{ grid-template-columns:1fr; } .map-frame{ min-height:280px; } }
+
+  /* ---------- footer ---------- */
+  footer{ padding:56px 0 40px; border-top:1px solid var(--hairline); }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    flex-wrap:wrap; gap:24px; margin-bottom:40px;
+  }
+  .footer-links{ display:flex; gap:28px; flex-wrap:wrap; }
+  .footer-links a{
+    font-family:'Cinzel', serif;
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .footer-links a:hover{ color:var(--gold-deep); }
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-family:'Cinzel', serif;
+    font-size:10px; letter-spacing:.06em; color:var(--ink-soft);
+    padding-top:20px; border-top:1px solid var(--hairline);
+  }
+
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  @media (prefers-reduced-motion: reduce){
+    .service{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark"><img src="Shookra.jpeg" alt="Shookra crest" /></span>
+      <span class="wordmark">Shookra<small>Aesthetics &amp; Academy</small></span>
+    </a>
+    <div class="navlinks">
+      <div class="navlinks-inner">
+        <a href="#services">Services</a>
+        <a href="#academy">Academy</a>
+        <a href="#visit">Visit</a>
+      </div>
+      <a href="#visit" class="btn">Book</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap">
+
+      <div class="hero-mark"><img src="Shookra.jpeg" alt="Shookra Aesthetics &amp; Academy — Skin, Hair, Laser, Permanent Makeup" /></div>
+
+      <span class="eyebrow hero-eyebrow">Shivalik Road, New Delhi · Certified</span>
+      <h1 class="hero-headline">Expertise you can <em>see</em> in every result</h1>
+      <p class="hero-sub">Shookra Aesthetics &amp; Academy pairs clinical skincare with the hand of a trained artist — across skin, hair, laser and permanent makeup. Every visit begins with a proper read of you, not a set menu.</p>
+      <div class="hero-cta">
+        <a href="#visit" class="btn btn--solid">Book a consultation</a>
+        <a href="#academy" class="btn">Explore the academy</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we treat</span>
+        <h2>Five disciplines, <em>one</em> standard</h2>
+        <p class="section-note">Every treatment is preceded by a consultation — we read your skin and tone before we plan anything.</p>
+      </div>
+
+      <div class="service-list">
+        <div class="service">
+          <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>
+          <h3>Skin</h3>
+          <p>Facials, peels and skin therapy built around your actual skin type and its current state, not a fixed menu.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service">
+          <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>
+          <h3>Hair</h3>
+          <p>Scalp treatment and hair restoration therapy for thinning, fall, and texture and density concerns.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service">
+          <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>
+          <h3>Laser</h3>
+          <p>Hair reduction and skin resurfacing, calibrated to your tone before your first session begins.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service">
+          <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>
+          <h3>Permanent Makeup</h3>
+          <p>Brows, liner and lips — pigment matched and mapped to your features before a single pass is made.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service">
+          <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>
+          <h3>Paramedical Tattoo</h3>
+          <p>Areola, scar and skin-tone camouflage work for clients rebuilding after surgery, injury or illness.</p>
+          <div class="service-line"></div>
+        </div>
+        <div class="service">
+          <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>
+          <h3>Consultation</h3>
+          <p>Every new client starts here — a skin and scalp read, a tone match, and a plan before anything is booked.</p>
+          <div class="service-line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMY -->
+  <section id="academy" class="academy">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow eyebrow--on-dark">The Academy</span>
+        <h2>Trained by the hands that <em>treat</em> our clients</h2>
+        <p>Small cohorts, hands-on practice, and certification you can put your name behind.</p>
+      </div>
+
+      <div class="academy-grid">
+        <div class="academy-copy">
+          <p>Shookra's academy trains practitioners in skin, laser and permanent makeup technique, taught by the same certified team that treats our clients — not from a video.</p>
+          <ul class="academy-list">
+            <li>
+              <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6c.4 3 .9 5 1.9 6C15 13 17 13.5 20 14c-3 .5-5 1-6.1 2-1 1-1.5 3-1.9 6-.4-3-.9-5-1.9-6C9 15 7 14.5 4 14c3-.5 5-1 6.1-2 1-1 1.5-3 1.9-6z"/></svg></span>
+              <div><span>Skin &amp; makeup fundamentals</span><p>Consultation practice, tone matching, hygiene protocol</p></div>
+            </li>
+            <li>
+              <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6c.4 3 .9 5 1.9 6C15 13 17 13.5 20 14c-3 .5-5 1-6.1 2-1 1-1.5 3-1.9 6-.4-3-.9-5-1.9-6C9 15 7 14.5 4 14c3-.5 5-1 6.1-2 1-1 1.5-3 1.9-6z"/></svg></span>
+              <div><span>Laser &amp; paramedical technique</span><p>Device handling, safety calibration, camouflage work</p></div>
+            </li>
+            <li>
+              <span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 6c.4 3 .9 5 1.9 6C15 13 17 13.5 20 14c-3 .5-5 1-6.1 2-1 1-1.5 3-1.9 6-.4-3-.9-5-1.9-6C9 15 7 14.5 4 14c3-.5 5-1 6.1-2 1-1 1.5-3 1.9-6z"/></svg></span>
+              <div><span>Certification pathway</span><p>Supervised practice through to sign-off</p></div>
+            </li>
+          </ul>
+          <a href="#visit" class="btn btn--ghost-dark">Ask about enrolment</a>
+        </div>
+        <div class="academy-panel">
+          <span class="eyebrow eyebrow--on-dark">Why train here</span>
+          <div class="stat">1:1</div>
+          <div class="stat-label">mentorship — every student trains alongside a certified practitioner.</div>
+          <div class="stat">05</div>
+          <div class="stat-label">disciplines taught under one roof, from skin fundamentals to paramedical tattoo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust">
+    <div class="wrap">
+      <span class="trust-item"><span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>Certified practitioners</span>
+      <span class="trust-item"><span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>Hygiene-first protocol</span>
+      <span class="trust-item"><span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>Tone-matched pigment work</span>
+      <span class="trust-item"><span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span>Small-cohort training</span>
+    </div>
+  </div>
+
+  <!-- VISIT -->
+  <section id="visit">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Visit</span>
+        <h2>Come in for a <em>consultation</em> first</h2>
+        <p class="section-note">Every treatment plan starts with a read of your skin — walk in, or book ahead.</p>
+      </div>
+
+      <div class="visit-grid">
+        <div class="visit-card">
+          <span class="eyebrow">Address</span>
+          <div class="visit-address">Shivalik Road, New Delhi</div>
+          <div class="visit-meta">
+            <div><span>Status</span><span>Certified</span></div>
+            <div><span>Services</span><span>Skin · Hair · Laser · Permanent Makeup</span></div>
+            <div><span>Training</span><span>Academy enrolment open</span></div>
+          </div>
+          <a href="https://maps.app.goo.gl/k554eYbJxTar6n1K6?g_st=ic" class="btn btn--solid" target="_blank" rel="noopener">Get directions</a>
+        </div>
+        <a class="map-frame" href="https://maps.app.goo.gl/k554eYbJxTar6n1K6?g_st=ic" target="_blank" rel="noopener">
+          <div class="map-pin"><span class="spark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c.6 5.6 1.6 9 3.4 10.8C17.2 12.6 20.4 13.5 24 14c-3.6.5-6.8 1.4-8.6 3.2C13.6 19 12.6 22.4 12 28c-.6-5.6-1.6-9-3.4-10.8C6.8 15.4 3.6 14.5 0 14c3.6-.5 6.8-1.4 8.6-3.2C10.4 9 11.4 5.6 12 0z"/></svg></span></div>
+          <p>Shivalik Road, New Delhi — open in Google Maps</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a href="#top" class="brand">
+        <span class="brand-mark"><img src="Shookra.jpeg" alt="Shookra crest" /></span>
+        <span class="wordmark">Shookra<small>Aesthetics &amp; Academy</small></span>
+      </a>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#academy">Academy</a>
+        <a href="#visit">Visit</a>
+        <a href="#" rel="noopener">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Shookra Aesthetics &amp; Academy — Shivalik Road, New Delhi</span>
+      <span>Certified · Skin · Hair · Laser · Permanent Makeup · Paramedical Tattoo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.service');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((entry, idx)=>{
+      if(entry.isIntersecting){
+        setTimeout(()=>entry.target.classList.add('in'), idx*70);
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.2 });
+  items.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
