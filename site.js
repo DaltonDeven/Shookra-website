@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Shookra — shared script
+   Shookra: shared script
    ==========================================================================
    1) WHATSAPP NUMBER
       Change it in ONE place, right below. Every "Book", "Book a consultation",
@@ -9,7 +9,7 @@
       India example: 919876543210
    ========================================================================== */
 
-const WHATSAPP_NUMBER = "9289370287"; // <-- REPLACE WITH THE REAL NUMBER
+const WHATSAPP_NUMBER = "919289370287";
 
 /* Default message used when a button doesn't specify its own. */
 const WHATSAPP_DEFAULT_MESSAGE =

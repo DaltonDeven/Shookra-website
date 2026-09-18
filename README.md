@@ -1,7 +1,7 @@
-# Shookra Aesthetics & Academy — site files
+# Shookra Aesthetics & Academy   site files
 
 Put every file in this folder in the same directory as your existing `Shookra.jpeg`
-logo. No build step, no framework — open `index.html` in a browser and it works.
+logo. No build step, no framework   open `index.html` in a browser and it works.
 
 ```
 index.html              Home
@@ -10,41 +10,37 @@ skin.html
 hair.html
 laser.html
 permanent-makeup.html
-permanent-tattoo.html
-styles.css              One stylesheet for all pages — theme lives here
+paramedical-tattoo.html
+styles.css              One stylesheet for all pages   theme lives here
 site.js                 WhatsApp links + tile reveal
 map.jpg                 Google Maps screenshot used in the Visit tile
-founder.jpg             PLACEHOLDER — replace with the founder's portrait
-Shookra.jpeg            your existing logo (not included here)
+founder.jpg             Anya's portrait, cropped to 4:5
+logo-mark.png           SA monogram, transparent, used in nav + footer
+logo-full.png           Full logo lockup, transparent, used in the hero
 ```
 
-## 1. Set the WhatsApp number — this is the only thing that's mandatory
+## 1. WhatsApp number (already set)
 
-Open `site.js`, first line of code:
+`site.js` line 12:
 
 ```js
-const WHATSAPP_NUMBER = "919999999999"; // <-- REPLACE WITH THE REAL NUMBER
+const WHATSAPP_NUMBER = "919289370287";
 ```
 
-Country code + number, digits only. No `+`, no spaces, no dashes.
-Example for India: `919876543210`.
-
-That single value drives **every** WhatsApp button on every page:
-Book on WhatsApp, Book a consultation, Ask about enrolment, the Consultation
-tile, each service page's Ask on WhatsApp, and the footer link.
+That single value drives **every** WhatsApp button on every page: Book your slot,
+Book a consultation, Ask about enrolment, the Consultation tile, each service
+page's Ask on WhatsApp, and the footer link. Country code + digits only, no `+`
+or spaces, if you ever need to change it.
 
 Each button opens the chat with a pre-filled message specific to where it was
-clicked (e.g. the laser page opens with a laser enquiry), so you can tell at a
-glance what the lead came in for. To change any of that wording, edit the
-`data-wa="..."` attribute on that link in the HTML.
+clicked (the laser page opens with a laser enquiry), so you can tell what the
+lead came in for. To change any of that wording, edit the `data-wa="..."`
+attribute on that link in the HTML.
 
-## 2. Replace the founder photo and copy
+## 2. Founder's Corner
 
-- Swap `founder.jpg` for a real portrait. Best at **4:5 portrait ratio**
-  (e.g. 900 × 1125px) — it's cropped to that automatically.
-- In `founders-corner.html`, replace `[Founder's Name]` (appears twice: the
-  heading and the first paragraph), the role line, the two paragraphs, the pull
-  quote and the three fact rows.
+Anya's photo and story are already in. `founder.jpg` is cropped to 4:5 from the
+photo you sent; to change it, drop in a new 4:5 image with the same filename.
 
 ## 3. Instagram
 
@@ -54,8 +50,9 @@ page and the footer links all point to
 
 ## 4. Google Maps tile
 
-The Visit section now shows the actual map screenshot with a gold pin and an
-"Open in Google Maps" button pinned to the bottom, so it reads as clickable.
+The Visit section shows the actual map screenshot with an "Open in Google Maps"
+button pinned to the bottom, so it reads as clickable. Google's own marker and
+the Shookra label are already in the screenshot, so there is no overlaid pin.
 The whole tile is the link. To update the map picture later, just replace
 `map.jpg` with a new screenshot.
 
@@ -66,6 +63,13 @@ Each service page has: hero, "what we treat", a treatments list, a numbered
 address card, links to the other four services, and a closing WhatsApp CTA.
 
 The copy is written to be accurate and non-overclaiming, but **read it before
-you publish** — adjust anything that doesn't match what you actually offer
+you publish**   adjust anything that doesn't match what you actually offer
 (device names, session counts, what's included). Prices are deliberately left
 out; the CTA sends people to WhatsApp instead.
+
+
+## 6. Contact number
+
+`+91 92893 70287` appears under the address in every footer as a `tel:` link,
+so it dials on mobile. It's also the number wired into the WhatsApp buttons
+(`site.js`). Change both if they should differ.
